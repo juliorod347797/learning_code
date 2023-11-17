@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forms and inputs</title>
+</head>
+<body>
+<!-- h tags are use mainly for titles of word that you want to pop out  -->
+<h1 class="color one" id="one">h1</h1>
+<h2 class="backGround">h2</h2>
+<h3>h3</h3>
+<h4 class="color border_1">h4</h4>
+<h5 class="backGround">h5</h5>
+<h6>h6</h6>
+<!-- a tags a for redirecting your site somewhere else of your choosing -->
+<!-- <a href="/hello.html" class="hello"> take me to hello</a> -->
+<a href="./hello.html" class="hello"> take me to hello</a>
+
+<!-- this is an p tag -->
+<!-- p tags are for general paragraph -->
+<p class="border_1">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
+    voluptate nobis omnis animi fuga quod velit quaerat quos veritatis!
+    In natus odio, possimus dolore similique praesentium quas! Fugiat a
+    molestiae distinctio. Dolorum nihil, vitae ut labore consectetur
+    quia quas quam expedita tempore facilis voluptate atque delectus
+    debitis repellendus porro vel. Quidem accusamus eos delectus, nemo
+    ex, tenetur fugit veniam ducimus quo blanditiis praesentium nam
+    illum. Temporibus debitis vitae est. Nemo, architecto qui illum
+    delectus modi voluptatum id quam neque, optio ut quaerat magnam quis
+    ipsa alias? Omnis eaque voluptates, sapiente possimus nesciunt
+    voluptatum. Libero in nulla omnis illum asperiores sint?
+</p>
+
+<!-- a form is like a shipping service that takes information and delivers it to an address  (and you have tell it to make a request to create(post), view(get) update(put)  or delete(delete)  something ) -->
+
+<form action="/hello.html" method="post">
+    <h1>take me to your leader</h1>
+    <div>
+        <!-- inputs are for getting a user to input info  -->
+        <!-- <label>Name</label> -->
+        <input type="text" placeholder="your name" />
+        <!-- <header></header> -->
+    </div>
+
+    <div>
+        <label for="" class="color">Age</label>
+        <input type="number" />
+    </div>
+
+    <div>
+        <label for="">Email</label>
+        <input type="email" />
+    </div>
+
+    <div>
+        <label for="">Name</label>
+        <input type="radio" />
+        <input type="radio" disabled />
+        <input type="email" name="" id="" />
+    </div>
+
+    <div>
+        <!-- inputs to collect a big user input like a comments -->
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+    </div>
+
+    <div>
+        <select name="" class="color">
+            <option value="" disabled selected>make your choir</option>
+            <option value="lenddy">lenddy</option>
+            <option value="06/17/2008">some date</option>
+            <option value="lenddy">lenddy3</option>
+            <option value="lenddy">lenddy4</option>
+            <option value="lenddy">lenddy5</option>
+        </select>
+    </div>
+    <!-- <input type="submit" name="" id="" /> -->
+    <!-- <button>bayyyyyyyyyy</button> -->
+</form>
+
+<!-- this is how to create a list  ol === order list   ul === un-order list  -->
+<ul>
+    <!-- this a list items -->
+    <li>hello</li>
+    <li>hello2</li>
+    <li>hello3</li>
+    <li>hello4</li>
+    <li>hello5</li>
+    <li>hello6</li>
+</ul>
+
+<table class="color">
+    <tr>
+        <th>names</th>
+        <th>names</th>
+        <th>names</th>
+        <th>names</th>
+        <th>names</th>
+    </tr>
+    <tr>
+        <td>lenddy</td>
+    </tr>
+    <tr>
+        <td>lenddy</td>
+        <td>lenddy</td>
+        <td>lenddy</td>
+        <td>lenddy</td>
+        <td>lenddy</td>
+        <td>lenddy</td>
+        <td>lenddy</td>
+    </tr>
+</table>
+<script>
+    let count = 0;
+</script>
+<button onclick="count++; console.log(count)">count now is:</button>;
+</body>
+</html>

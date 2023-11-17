@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* this belongs to index.html */
+
+body {
+    min-height: 100vh;
+    background: #ddd;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #fff;
+    border-radius: 10px;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    background: linear-gradient(-45deg, #571845, #c70039);
+    display: flex;
+    flex-direction: column;
+    padding: 20px 5px 0 20px;
+    z-index: 100;
+}
+
+header h2 {
+    font-size: 32px;
+    color: #fff;
+    padding-bottom: 5px;
+}
+
+.scrollbox {
+    overflow: auto;
+    padding-right: 10px;
+    visibility: hidden;
+}
+
+.scrollbox-inner,
+.scrollbox:hover {
+    visibility: visible;
+}
+
+.scrollbox-inner ul,
+.scrollbox-inner li {
+    font-size: 16px;
+    color: #fff;
+}
+
+footer h2 {
+    font-size: 24px;
+    color: #fff;
+    padding: 15px 0 40px;
+}
+
+.content {
+    margin-left: 225px;
+    text-align: center;
+    padding: 20px;
+}
+
+.content h2 {
+    font-size: 46px; 
+    height: 100px;
+    width: 100%;
+    background: linear-gradient(-45deg, #571845, #c70039);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text; 
+}
+
+.content2 {
+    margin-left: 225px;
+    text-align: start;
+    padding: 20px;    
+    background: linear-gradient(-45deg, #571845, #c70039);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+

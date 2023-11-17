@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #fff;
+    border-radius: 10px;
+}
+
+.scrollbox {
+    overflow: auto;
+    padding-right: 10px;
+    visibility: hidden;
+}
+
+.scrollbox-inner,
+.scrollbox:hover {
+    visibility: visible;
+}
+
+.scrollbox-inner ul {
+    font-size: 18px;
+    color: #fafafa;
+    text-decoration: none;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 170px;
+    height: 100%;
+    background: linear-gradient(-45deg, #571845, #c70039);
+    display: flex;
+    flex-direction: column;
+    padding: 20px 5px 0 20px;
+    z-index: 100;
+}
+
+header h2 {
+    font-size: 24px;
+    color: #fff;
+    padding-bottom: 5px;
+}
+
+footer h2 {
+    font-size: 24px;
+    color: #fff;
+    padding: 15px 0 40px;
+}
+
+.container {
+    background: #ddd;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: relative;
+    text-align: center;
+
+    /* Add these styles to center the content */
+    align-items: center;
+    justify-content: center;
+    margin-left: 195px;
+}
+
+.container h1 {
+    font-size: 46px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background: linear-gradient(-45deg, #571845, #c70039);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+.doors {
+    display: flex;
+    position: relative;
+    z-index: 1;
+}
+
+.container .doors,
+.buttons {
+    margin: 0 auto;
+}
+
+.door {
+    background: linear-gradient(-45deg, #571845, #c70039);
+    width: 100px;
+    height: 110px;
+    overflow: hidden;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.boxes {
+    transition: transform 1s ease-in-out;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    transition: filter 0.3s ease-in-out;
+}
+
+.container .buttons {
+    margin-top: 5px;
+}
+
+.container .buttons button {
+    margin: 0 3px;
+}
+
+.buttons {
+    color: #fafafa;
+}
+
+button {
+    cursor: pointer;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    background: linear-gradient(-45deg, #571845, #c70039);
+}
+
+#spinner,
+#reseter {
+    color: #fafafa;
+}
+
+.info {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+
+
