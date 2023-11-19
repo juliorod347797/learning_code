@@ -1,0 +1,598 @@
+* {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  :root {
+    --background-color: #181818;
+    --border-color: #4411ab;
+    --points-color: #eee;
+  }
+  
+  body {
+    background-color: var(--background-color, #181818);
+  }
+  
+  .game {
+    position: relative;
+    margin: 20px auto 0;
+    margin-bottom: 20px;
+    width: 300px;
+    height: 350px;
+    box-shadow: 0 0 0px 2px var(--border-color, #4411ab),
+      0 0 0px 6px var(--background-color, #181818),
+      0 0 0px 8px var(--border-color, #4411ab);
+    border-radius: 0.25rem;
+  
+    .walls {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+  
+      .left-walls,
+      .right-walls {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+  
+        > div {
+          width: 25px;
+          height: 17px;
+          box-shadow: 0 0 0px 2px var(--border-color, #4411ab),
+            0 0 0px 6px var(--background-color, #181818),
+            0 0 0px 8px var(--border-color, #4411ab);
+          margin-bottom: 40px;
+  
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+  
+      .left-walls {
+        left: 0;
+  
+        > div {
+          border-radius: 0 0.25rem 0.25rem 0;
+        }
+      }
+  
+      .right-walls {
+        right: 0;
+  
+        > div {
+          border-radius: 0.25rem 0 0 0.25rem;
+        }
+      }
+  
+      .top-wall {
+        position: absolute;
+        border: 2px solid var(--border-color, #4411ab);
+        width: 12px;
+        height: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        top: -2px;
+        border-top-color: var(--background-color, #181818);
+        border-radius: 0 0 0.25rem 0.25rem;
+      }
+  
+      .central-walls {
+        .complex-wall-one,
+        .complex-wall-two,
+        .complex-wall-three {
+          position: absolute;
+  
+          .width {
+            height: 12px;
+            width: 61px;
+            border: 2px solid var(--border-color, #4411ab);
+            border-radius: 0.25rem;
+          }
+  
+          .height {
+            width: 12px;
+            height: 25px;
+            border-radius: 0 0 0.25rem 0.25rem;
+            border: 2px solid var(--border-color, #4411ab);
+            margin: -2px 0 0 25px;
+            border-top-color: var(--background-color, #181818);
+          }
+        }
+  
+        .complex-wall-two {
+          transform: rotate(180deg);
+  
+          .width {
+            width: 75px;
+          }
+        }
+  
+        .complex-wall-three {
+          .width {
+            width: 40px;
+            border-bottom-left-radius: 0;
+          }
+  
+          .height {
+            margin: -2px 0 0;
+          }
+        }
+  
+        .simple-wall-one {
+          top: 23px;
+          width: 40px;
+          height: 25px;
+          border: 2px solid var(--border-color, #4411ab);
+          border-radius: 0.25rem;
+          position: absolute;
+        }
+  
+        .simple-wall-two {
+          top: 23px;
+          width: 25px;
+          height: 25px;
+          border: 2px solid var(--border-color, #4411ab);
+          border-radius: 0.25rem;
+          position: absolute;
+        }
+  
+        .simple-wall-three {
+          width: 25px;
+          height: 10px;
+          border: 2px solid var(--border-color, #4411ab);
+          border-radius: 0.25rem;
+          position: absolute;
+          top: 70px;
+        }
+  
+        .simple-wall-four {
+          width: 10px;
+          height: 42px;
+          border: 2px solid var(--border-color, #4411ab);
+          border-radius: 0.25rem;
+          position: absolute;
+        }
+  
+        .wall-1 {
+          top: 70px;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+  
+        .wall-2 {
+          left: 50%;
+          transform: translateX(-50%);
+          bottom: 105px;
+        }
+  
+        .wall-3 {
+          left: 50%;
+          transform: translateX(-50%);
+          bottom: 26px;
+        }
+  
+        .wall-4 {
+          transform: rotate(-90deg);
+          top: 98px;
+          left: 51px;
+        }
+  
+        .wall-5 {
+          transform: rotate(90deg);
+          top: 98px;
+          right: 51px;
+        }
+  
+        .wall-6 {
+          bottom: 28px;
+          left: 25px;
+        }
+  
+        .wall-7 {
+          bottom: 28px;
+          right: 25px;
+          transform: rotate(180deg) rotateY(180deg);
+        }
+  
+        .wall-8 {
+          bottom: 63px;
+          transform: rotate(90deg);
+          left: 18px;
+        }
+  
+        .wall-9 {
+          bottom: 63px;
+          transform: rotate(90deg) rotateX(180deg);
+          right: 18px;
+        }
+  
+        .wall-10 {
+          left: 80px;
+        }
+  
+        .wall-11 {
+          right: 80px;
+        }
+  
+        .wall-12 {
+          left: 18px;
+        }
+  
+        .wall-13 {
+          right: 18px;
+        }
+  
+        .wall-14 {
+          left: 18px;
+        }
+  
+        .wall-15 {
+          right: 18px;
+        }
+  
+        .wall-16 {
+          top: 185px;
+          left: 65px;
+        }
+  
+        .wall-17 {
+          top: 185px;
+          right: 65px;
+        }
+  
+        .wall-18 {
+          transform: rotate(90deg);
+          bottom: 73px;
+          left: 95px;
+        }
+  
+        .wall-19 {
+          transform: rotate(90deg);
+          bottom: 73px;
+          right: 95px;
+        }
+  
+        .central-squar {
+          width: 85px;
+          height: 50px;
+          position: absolute;
+          top: 47%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          box-shadow: 0 0 0px 2px var(--border-color, #4411ab),
+            0 0 0px 6px var(--background-color, #181818),
+            0 0 0px 8px var(--border-color, #4411ab);
+  
+          .door {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+  
+            .white-door {
+              position: absolute;
+              left: 50%;
+              transform: translateX(-50%);
+              width: 50%;
+              height: 2px;
+              top: -8px;
+              border: solid var(--background-color, #181818);
+              border-width: 3px 0 3px;
+              background-color: #fff;
+              box-sizing: content-box;
+            }
+          }
+        }
+      }
+    }
+  
+    .gaps {
+      .left-gap,
+      .right-gap {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 8px;
+        height: 78px;
+        border-style: solid;
+        background-color: var(--background-color, #181818);
+        border-color: var(--border-color, #4411ab);
+        border-width: 2px 0 2px 0;
+      }
+  
+      .left-gap {
+        left: -8px;
+      }
+  
+      .right-gap {
+        right: -8px;
+      }
+    }
+  
+    .small-point {
+      position: absolute;
+      top: 13px;
+      left: 8px;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background-color: var(--points-color, #eee);
+      box-shadow: 0px 20px 0px var(--points-color, #eee),
+        0px 40px 0px var(--points-color, #eee),
+        0px 60px 0px var(--points-color, #eee),
+        0px 80px 0px var(--points-color, #eee),
+        0px 100px 0px var(--points-color, #eee),
+        0px 220px 0px var(--points-color, #eee),
+        0px 240px 0px var(--points-color, #eee),
+        0px 260px 0px var(--points-color, #eee),
+        0px 280px 0px var(--points-color, #eee),
+        0px 300px 0px var(--points-color, #eee),
+        0px 320px 0px var(--points-color, #eee),
+        20px 0px 0px var(--points-color, #eee),
+        20px 40px 0px var(--points-color, #eee),
+        20px 80px 0px var(--points-color, #eee),
+        20px 100px 0px var(--points-color, #eee),
+        20px 220px 0px var(--points-color, #eee),
+        20px 260px 0px var(--points-color, #eee),
+        20px 280px 0px var(--points-color, #eee),
+        20px 320px 0px var(--points-color, #eee),
+        40px 0px 0px var(--points-color, #eee),
+        40px 20px 0px var(--points-color, #eee),
+        40px 40px 0px var(--points-color, #eee),
+        40px 60px 0px var(--points-color, #eee),
+        40px 80px 0px var(--points-color, #eee),
+        40px 100px 0px var(--points-color, #eee),
+        40px 120px 0px var(--points-color, #eee),
+        40px 140px 0px var(--points-color, #eee),
+        40px 160px 0px var(--points-color, #eee),
+        40px 180px 0px var(--points-color, #eee),
+        40px 200px 0px var(--points-color, #eee),
+        40px 220px 0px var(--points-color, #eee),
+        40px 280px 0px var(--points-color, #eee),
+        40px 320px 0px var(--points-color, #eee),
+        60px 0px 0px var(--points-color, #eee),
+        60px 20px 0px var(--points-color, #eee),
+        60px 40px 0px var(--points-color, #eee),
+        60px 60px 0px var(--points-color, #eee),
+        60px 140px 0px var(--points-color, #eee),
+        60px 160px 0px var(--points-color, #eee),
+        60px 220px 0px var(--points-color, #eee),
+        60px 240px 0px var(--points-color, #eee),
+        60px 260px 0px var(--points-color, #eee),
+        60px 320px 0px var(--points-color, #eee),
+        80px 0px 0px var(--points-color, #eee),
+        80px 40px 0px var(--points-color, #eee),
+        80px 60px 0px var(--points-color, #eee),
+        80px 80px 0px var(--points-color, #eee),
+        80px 220px 0px var(--points-color, #eee),
+        80px 260px 0px var(--points-color, #eee),
+        80px 280px 0px var(--points-color, #eee),
+        80px 320px 0px var(--points-color, #eee),
+        100px 0px 0px var(--points-color, #eee),
+        100px 40px 0px var(--points-color, #eee),
+        100px 60px 0px var(--points-color, #eee),
+        100px 80px 0px var(--points-color, #eee),
+        100px 220px 0px var(--points-color, #eee),
+        100px 260px 0px var(--points-color, #eee),
+        100px 280px 0px var(--points-color, #eee),
+        100px 300px 0px var(--points-color, #eee),
+        100px 320px 0px var(--points-color, #eee),
+        120px 0px 0px var(--points-color, #eee),
+        120px 20px 0px var(--points-color, #eee),
+        120px 40px 0px var(--points-color, #eee),
+        120px 80px 0px var(--points-color, #eee),
+        120px 220px 0px var(--points-color, #eee),
+        120px 240px 0px var(--points-color, #eee),
+        120px 260px 0px var(--points-color, #eee),
+        120px 300px 0px var(--points-color, #eee),
+        120px 320px 0px var(--points-color, #eee),
+        140px 40px 0px var(--points-color, #eee),
+        140px 240px 0px var(--points-color, #eee),
+        140px 260px 0px var(--points-color, #eee),
+        140px 320px 0px var(--points-color, #eee),
+        160px 0px 0px var(--points-color, #eee),
+        160px 20px 0px var(--points-color, #eee),
+        160px 40px 0px var(--points-color, #eee),
+        160px 80px 0px var(--points-color, #eee),
+        160px 220px 0px var(--points-color, #eee),
+        160px 240px 0px var(--points-color, #eee),
+        160px 260px 0px var(--points-color, #eee),
+        160px 300px 0px var(--points-color, #eee),
+        160px 320px 0px var(--points-color, #eee),
+        180px 0px 0px var(--points-color, #eee),
+        180px 40px 0px var(--points-color, #eee),
+        180px 60px 0px var(--points-color, #eee),
+        180px 80px 0px var(--points-color, #eee),
+        180px 220px 0px var(--points-color, #eee),
+        180px 260px 0px var(--points-color, #eee),
+        180px 280px 0px var(--points-color, #eee),
+        180px 300px 0px var(--points-color, #eee),
+        180px 320px 0px var(--points-color, #eee),
+        200px 0px 0px var(--points-color, #eee),
+        200px 40px 0px var(--points-color, #eee),
+        200px 60px 0px var(--points-color, #eee),
+        200px 80px 0px var(--points-color, #eee),
+        200px 220px 0px var(--points-color, #eee),
+        200px 260px 0px var(--points-color, #eee),
+        200px 280px 0px var(--points-color, #eee),
+        200px 320px 0px var(--points-color, #eee),
+        220px 0px 0px var(--points-color, #eee),
+        220px 20px 0px var(--points-color, #eee),
+        220px 40px 0px var(--points-color, #eee),
+        220px 60px 0px var(--points-color, #eee),
+        220px 140px 0px var(--points-color, #eee),
+        220px 160px 0px var(--points-color, #eee),
+        220px 220px 0px var(--points-color, #eee),
+        220px 240px 0px var(--points-color, #eee),
+        220px 260px 0px var(--points-color, #eee),
+        220px 320px 0px var(--points-color, #eee),
+        240px 0px 0px var(--points-color, #eee),
+        240px 20px 0px var(--points-color, #eee),
+        240px 40px 0px var(--points-color, #eee),
+        240px 60px 0px var(--points-color, #eee),
+        240px 80px 0px var(--points-color, #eee),
+        240px 100px 0px var(--points-color, #eee),
+        240px 120px 0px var(--points-color, #eee),
+        240px 140px 0px var(--points-color, #eee),
+        240px 160px 0px var(--points-color, #eee),
+        240px 180px 0px var(--points-color, #eee),
+        240px 200px 0px var(--points-color, #eee),
+        240px 220px 0px var(--points-color, #eee),
+        240px 280px 0px var(--points-color, #eee),
+        240px 320px 0px var(--points-color, #eee),
+        260px 0px 0px var(--points-color, #eee),
+        260px 40px 0px var(--points-color, #eee),
+        260px 80px 0px var(--points-color, #eee),
+        260px 100px 0px var(--points-color, #eee),
+        260px 220px 0px var(--points-color, #eee),
+        260px 260px 0px var(--points-color, #eee),
+        260px 280px 0px var(--points-color, #eee),
+        260px 320px 0px var(--points-color, #eee),
+        280px 0px 0px var(--points-color, #eee),
+        280px 20px 0px var(--points-color, #eee),
+        280px 40px 0px var(--points-color, #eee),
+        280px 60px 0px var(--points-color, #eee),
+        280px 80px 0px var(--points-color, #eee),
+        280px 100px 0px var(--points-color, #eee),
+        280px 220px 0px var(--points-color, #eee),
+        280px 240px 0px var(--points-color, #eee),
+        280px 260px 0px var(--points-color, #eee),
+        280px 280px 0px var(--points-color, #eee),
+        280px 300px 0px var(--points-color, #eee),
+        280px 320px 0px var(--points-color, #eee);
+    }
+  
+    .big-point {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: var(--points-color, #eee);
+      top: 90px;
+      left: 6px;
+      box-shadow: 280px 0 0 var(--points-color, #eee),
+        0 180px 0 var(--points-color, #eee),
+        280px 180px 0 var(--points-color, #eee);
+    }
+  
+    .ghosts {
+      .ghost {
+        position: absolute;
+        width: 12px;
+        height: 16px;
+  
+        .strucure {
+          position: relative;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+  
+          > div {
+            background-color: var(--ghost-color, #eee);
+          }
+  
+          .head {
+            width: 100%;
+            height: 6px;
+            border-radius: 50% 50% 0 0;
+          }
+  
+          .eyes {
+            background-color: transparent;
+            width: 10px;
+            height: 5px;
+            position: absolute;
+            top: 2px;
+            left: 50%;
+            transform: translateX(-50%);
+  
+            span {
+              display: inline-block;
+              width: 50%;
+              height: 5px;
+              border-radius: 50%;
+              background-color: #fff;
+              transform: translateY(-10px);
+            }
+  
+            &.left {
+              span {
+                background-image: radial-gradient(
+                  ellipse at left,
+                  black 25%,
+                  transparent 45%
+                );
+              }
+            }
+  
+            &.right {
+              span {
+                background-image: radial-gradient(
+                  ellipse at right,
+                  black 25%,
+                  transparent 45%
+                );
+              }
+            }
+  
+            &.up {
+              span {
+                background-image: radial-gradient(
+                  ellipse at top,
+                  black 25%,
+                  transparent 45%
+                );
+              }
+            }
+  
+            &.down {
+              span {
+                background-image: radial-gradient(
+                  ellipse at bottom,
+                  black 25%,
+                  transparent 45%
+                );
+              }
+            }
+          }
+  
+          .body {
+            width: 100%;
+            height: 5px;
+          }
+  
+          .foot {
+            width: calc(100% / 3);
+            height: 5px;
+            margin: 0 auto;
+            border-radius: 0 0 50% 50%;
+            box-shadow: 4px 0 0 var(--ghost-color, #eee),
+              -4px 0 0 var(--ghost-color, #eee);
+          }
+        }
+      }
+    }
+  
+    .pacman {
+      width: 15px;
+      border-radius: 50%;
+      height: 15px;
+      background: conic-gradient(
+        #ffeb3b 0deg,
+        #ffeb3b 295deg,
+        transparent 270deg
+      );
+      transform: rotate(-54deg);
+      position: absolute;
+      bottom: 67px;
+      left: 140px;
+    }
+  }
+  
