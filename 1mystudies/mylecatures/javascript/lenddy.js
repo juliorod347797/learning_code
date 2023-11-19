@@ -22,53 +22,53 @@ let theta1 = 0;
 
 // This function updates the scale and position of the elements on scroll
 function updateScale() {
-  // Get the top and bottom position of the canvasRect element relative to the viewport.
-  let rect = canvasRect.getBoundingClientRect();
+	// Get the top and bottom position of the canvasRect element relative to the viewport.
+	let rect = canvasRect.getBoundingClientRect();
 
-  // Calculate the start and end scroll positions relative to the top of the document.
-  // window.pageYOffset provides the amount of pixels that the document is currently scrolled vertically.
-  // Adding rect.top/rect.bottom converts the relative viewport position to an absolute document position.
-  let startScrollPosition = window.pageYOffset + rect.top;
-  let endScrollPosition = window.pageYOffset + rect.bottom;
+	// Calculate the start and end scroll positions relative to the top of the document.
+	// window.pageYOffset provides the amount of pixels that the document is currently scrolled vertically.
+	// Adding rect.top/rect.bottom converts the relative viewport position to an absolute document position.
+	let startScrollPosition = window.pageYOffset + rect.top;
+	let endScrollPosition = window.pageYOffset + rect.bottom;
 
-  // The condition checks the following:
-  // 1. If the bottom edge of the viewport is above the starting position of our target element or
-  // 2. If the top edge of the viewport is below the ending position of our target element.
-  // In other words, it checks if the target element is outside the current viewport.
-  if (
-    targetScroll + window.innerHeight < startScrollPosition ||
-    targetScroll > endScrollPosition
-  ) {
-    // If either of the conditions is true, we are not viewing the element and thus we should exit (return) from the function early, without updating the parallax effects.
-    return;
-  }
+	// The condition checks the following:
+	// 1. If the bottom edge of the viewport is above the starting position of our target element or
+	// 2. If the top edge of the viewport is below the ending position of our target element.
+	// In other words, it checks if the target element is outside the current viewport.
+	if (
+		targetScroll + window.innerHeight < startScrollPosition ||
+		targetScroll > endScrollPosition
+	) {
+		// If either of the conditions is true, we are not viewing the element and thus we should exit (return) from the function early, without updating the parallax effects.
+		return;
+	}
 
-  // The currentScroll value is being adjusted to gradually approach the targetScroll value.
-  // This creates a smoother, easing effect rather than directly jumping to the target value.
-  currentScroll += (targetScroll - currentScroll) * ease;
+	// The currentScroll value is being adjusted to gradually approach the targetScroll value.
+	// This creates a smoother, easing effect rather than directly jumping to the target value.
+	currentScroll += (targetScroll - currentScroll) * ease;
 
-  let scaleValue1 = 1 + currentScroll * parallaxScaling1;
-  let scaleValue2 = 1 + currentScroll * parallaxScaling2;
+	let scaleValue1 = 1 + currentScroll * parallaxScaling1;
+	let scaleValue2 = 1 + currentScroll * parallaxScaling2;
 
-  // Use the scaleValue to adjust the transform property for scaling
-  textBehind.style.transform = `scale(${scaleValue1})`;
-  textFront.style.transform = `scale(${scaleValue1})`;
-  textBehindBlur.style.transform = `scale(${scaleValue1})`;
-  canvasRect.style.transform = `scale(${scaleValue2})`;
+	// Use the scaleValue to adjust the transform property for scaling
+	textBehind.style.transform = `scale(${scaleValue1})`;
+	textFront.style.transform = `scale(${scaleValue1})`;
+	textBehindBlur.style.transform = `scale(${scaleValue1})`;
+	canvasRect.style.transform = `scale(${scaleValue2})`;
 
-  // Modulate theta1 based on the current scrolling offset.
-  // This provides a connection between the 2D scrolling experience and the 3D Three.js animations.
-  theta1 += currentScroll * parallaxScaling3;
+	// Modulate theta1 based on the current scrolling offset.
+	// This provides a connection between the 2D scrolling experience and the 3D Three.js animations.
+	theta1 += currentScroll * parallaxScaling3;
 
-  // setTimeout is a way to delay the execution of the function.
-  // By calling updateScale with a delay of approximately 1/60th of a second, we're mimicking the behavior of requestAnimationFrame, aiming to update the parallax effect about 60 times per second.
-  // This makes the animation smoother by spreading the updates across small time intervals, making transitions less abrupt and more visually appealing.
-  setTimeout(updateScale, 1000 / 60); // approximately 60 times per second
+	// setTimeout is a way to delay the execution of the function.
+	// By calling updateScale with a delay of approximately 1/60th of a second, we're mimicking the behavior of requestAnimationFrame, aiming to update the parallax effect about 60 times per second.
+	// This makes the animation smoother by spreading the updates across small time intervals, making transitions less abrupt and more visually appealing.
+	setTimeout(updateScale, 1000 / 60); // approximately 60 times per second
 }
 
 window.addEventListener("scroll", () => {
-  targetScroll = window.pageYOffset;
-  updateScale();
+	targetScroll = window.pageYOffset;
+	updateScale();
 });
 
 updateScale();
@@ -78,9 +78,9 @@ import { RGBELoader } from "https://cdn.skypack.dev/three@0.124.0/examples/jsm/l
 import { OBJLoader } from "https://cdn.skypack.dev/three@0.134.0/examples/jsm/loaders/OBJLoader.js";
 
 var renderer = new THREE.WebGLRenderer({
-  canvas: document.getElementById("canvas"),
-  antialias: true,
-  alpha: true
+	canvas: document.getElementById("canvas"),
+	antialias: true,
+	alpha: true,
 });
 
 renderer.setPixelRatio(window.devicePixelRatio);
@@ -90,13 +90,13 @@ var scene = new THREE.Scene();
 
 // create a new RGBELoader to import the HDR
 const hdrEquirect = new RGBELoader()
-  // add your HDR //
-  .setPath(
-    "https://raw.githubusercontent.com/miroleon/gradient_hdr_freebie/main/Gradient_HDR_Freebies/"
-  )
-  .load("ml_gradient_freebie_01.hdr", function () {
-    hdrEquirect.mapping = THREE.EquirectangularReflectionMapping;
-  });
+	// add your HDR //
+	.setPath(
+		"https://raw.githubusercontent.com/miroleon/gradient_hdr_freebie/main/Gradient_HDR_Freebies/"
+	)
+	.load("ml_gradient_freebie_01.hdr", function () {
+		hdrEquirect.mapping = THREE.EquirectangularReflectionMapping;
+	});
 scene.environment = hdrEquirect;
 
 // add Fog to the scene - if too dark go lower with the second value
@@ -117,71 +117,71 @@ group.add(pointlight2);
 
 // create the camera
 var camera = new THREE.PerspectiveCamera(
-  45,
-  window.innerWidth / window.innerHeight,
-  0.1,
-  1000
+	45,
+	window.innerWidth / window.innerHeight,
+	0.1,
+	1000
 );
 camera.position.z = 10;
 // add the camera to the group
 group.add(camera);
 
 const material1 = new THREE.MeshStandardMaterial({
-  color: 0xffffff,
-  roughness: 0,
-  metalness: 0.5,
-  envMapIntensity: 10
+	color: 0xffffff,
+	roughness: 0,
+	metalness: 0.5,
+	envMapIntensity: 10,
 });
 
 // Load the model
 const objloader = new OBJLoader();
 objloader.load(
-  "https://raw.githubusercontent.com/miroleon/peace-of-mind/main/assets/buddha.obj",
-  (object) => {
-    object.children[0].material = material1;
-    object.scale.setScalar(20);
-    object.position.set(0, -0.25, 0);
-    group.add(object);
-  }
+	"https://raw.githubusercontent.com/miroleon/peace-of-mind/main/assets/buddha.obj",
+	(object) => {
+		object.children[0].material = material1;
+		object.scale.setScalar(20);
+		object.position.set(0, -0.25, 0);
+		group.add(object);
+	}
 );
 
 // RESIZE
 window.addEventListener("resize", onWindowResize);
 
 var update = function () {
-  // Continuously animate theta1 irrespective of scrolling to ensure there's an inherent animation in the 3D visualization.
-  theta1 += 0.0025;
+	// Continuously animate theta1 irrespective of scrolling to ensure there's an inherent animation in the 3D visualization.
+	theta1 += 0.0025;
 
-  // create a panning animation for the camera
-  camera.position.x = Math.sin(theta1) * 10;
-  camera.position.z = Math.cos(theta1) * 10;
-  camera.position.y = Math.cos(theta1);
+	// create a panning animation for the camera
+	camera.position.x = Math.sin(theta1) * 10;
+	camera.position.z = Math.cos(theta1) * 10;
+	camera.position.y = Math.cos(theta1);
 
-  pointlight.position.x = Math.sin(theta1 + 1) * 11;
-  pointlight.position.z = Math.cos(theta1 + 1) * 11;
-  pointlight.position.y = 2 * Math.cos(theta1 - 3) + 3;
+	pointlight.position.x = Math.sin(theta1 + 1) * 11;
+	pointlight.position.z = Math.cos(theta1 + 1) * 11;
+	pointlight.position.y = 2 * Math.cos(theta1 - 3) + 3;
 
-  pointlight2.position.x = -Math.sin(theta1 + 1) * 11;
-  pointlight2.position.z = -Math.cos(theta1 + 1) * 11;
-  pointlight2.position.y = 2 * -Math.cos(theta1 - 3) - 6;
+	pointlight2.position.x = -Math.sin(theta1 + 1) * 11;
+	pointlight2.position.z = -Math.cos(theta1 + 1) * 11;
+	pointlight2.position.y = 2 * -Math.cos(theta1 - 3) - 6;
 
-  // rotate the group to simulate the rotation of the HDR
-  group.rotation.y += 0.01;
+	// rotate the group to simulate the rotation of the HDR
+	group.rotation.y += 0.01;
 
-  // keep the camera look at 0,0,0
-  camera.lookAt(0, 0, 0);
+	// keep the camera look at 0,0,0
+	camera.lookAt(0, 0, 0);
 };
 
 function onWindowResize() {
-  camera.aspect = window.innerWidth / window.innerHeight;
-  camera.updateProjectionMatrix();
-  renderer.setSize(window.innerWidth, window.innerHeight);
+	camera.aspect = window.innerWidth / window.innerHeight;
+	camera.updateProjectionMatrix();
+	renderer.setSize(window.innerWidth, window.innerHeight);
 }
 
 function animate() {
-  update();
-  renderer.render(scene, camera);
-  requestAnimationFrame(animate);
+	update();
+	renderer.render(scene, camera);
+	requestAnimationFrame(animate);
 }
 
 requestAnimationFrame(animate);
