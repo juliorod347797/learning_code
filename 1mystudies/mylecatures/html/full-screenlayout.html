@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+        }
+
+        #game-container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            overflow: auto;
+        }
+
+        #side-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0;
+            overflow-x: hidden;
+            transition: 0.5s;
+            background-color: #111;
+            padding-top: 60px;
+            z-index: 1;
+        }
+
+        #side-nav a {
+            padding: 15px 15px 15px 32px;
+            text-decoration: none;
+            font-size: 1.5em;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        #side-nav a:hover {
+            color: #f1f1f1;
+        }
+
+        #menu-button {
+            font-size: 2em;
+            cursor: pointer;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 2;
+            color: #fff;
+            background: none;
+            border: none;
+        }
+
+        .overlay {
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: none;
+            z-index: 1;
+        }
+
+        .game-slide {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .game-slide:nth-child(odd) {
+            background-image: url('game_background_1.jpg'); /* Add your image paths */
+        }
+
+        .game-slide:nth-child(even) {
+            background-image: url('game_background_2.jpg'); /* Add your image paths */
+        }
+
+        .game-info {
+            width: 100%;
+            margin: 0;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .game-info h2 {
+            font-size: 3em;
+        }
+
+        .game-image {
+            width: 100%; /* Adjust the width as needed */
+            max-height: 200px; /* Adjust the height as needed */
+            object-fit: cover;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        .play-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1.5em;
+            background-color: #2196F3;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .play-button:hover {
+            background-color: #1565C0;
+        }
+
+        #footer {
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="menu-button" onclick="toggleNav()">&#9776; Menu</button>
+
+    <div id="side-nav">
+        <a href="#" onclick="toggleNav()">Close</a>
+        <a href="#">Game 1</a>
+        <a href="#">Game 2</a>
+        <a href="#">Game 3</a>
+        <a href="#">Game 4</a>
+        <a href="#">Game 5</a>
+        <a href="#">Game 6</a>
+        <a href="#">Game 7</a>
+    </div>
+
+    <div class="overlay" onclick="toggleNav()"></div>
+
+    <div id="game-container">
+        <div class="game-slide">
+            <div class="game-info">
+                <h2>Game Title 1</h2>
+                <img class="game-image" src="game_image_1.jpg" alt="Game Image 1">
+                <p>Description of the game. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.</p>
+                <a href="#" class="play-button">Play Now</a>
+            </div>
+        </div>
+        <div class="game-slide">
+            <div class="game-info">
+                <h2>Game Title 2</h2>
+                <img class="game-image" src="game_image_2.jpg" alt="Game Image 2"> 
+                <p>Description of the game. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.</p>
+                <a href="#" class="play-button">Play Now</a>
+            </div>
+        </div>
+        <div class="game-slide">
+            <div class="game-info">
+                <h2>Game Title 3</h2>
+                <img class="game-image" src="game_image_3.jpg" alt="Game Image 3"> 
+                <p>Description of the game. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.</p>
+                <a href="#" class="play-button">Play Now</a>
+            </div>
+        </div>
+        <div class="game-slide">
+            <div class="game-info">
+                <h2>Game Title 4</h2>
+                <img class="game-image" src="game_image_4.jpg" alt="Game Image 4"> 
+                <p>Description of the game. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.</p>
+                <a href="#" class="play-button">Play Now</a>
+            </div>
+        </div>
+        <div class="game-slide">
+            <div class="game-info">
+                <h2>Game Title 5</h2>
+                <img class="game-image" src="game_image_5.jpg" alt="Game Image 5"> <!-- Replace with actual image URL -->
+                <p>Description of the game. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.</p>
+                <a href="#" class="play-button">Play Now</a>
+            </div>
+        </div>
+        <div class="game-slide">
+            <div class="game-info">
+                <h2>Game Title 6</h2>
+                <img class="game-image" src="game_image_6.jpg" alt="Game Image 6">
+                <p>Description of the game. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.</p>
+                <a href="#" class="play-button">Play Now</a>
+            </div>
+        </div>
+        <div class="game-slide">
+            <div class="game-info">
+                <h2>Game Title 7</h2>
+                <img class="game-image" src="game_image_7.jpg" alt="Game Image 7"> 
+                <p>Description of the game. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.</p>
+                <a href="#" class="play-button">Play Now</a>
+            </div>
+        </div>
+
+        <div id="footer">
+            <p>Video Game Showcase &copy; 2023</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleNav() {
+            var sideNav = document.getElementById('side-nav');
+            var overlay = document.querySelector('.overlay');
+
+            if (sideNav.style.width === '250px') {
+                sideNav.style.width = '0';
+                overlay.style.display = 'none';
+            } else {
+                sideNav.style.width = '250px';
+                overlay.style.display = 'block';
+            }
+        }
+    </script>
+
+</body>
+</html>
+
+
+
+

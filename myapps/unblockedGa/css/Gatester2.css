@@ -1,0 +1,137 @@
+
+    body,
+    div,
+    h1,
+    button,
+    p {
+      margin: 0;
+      padding: 0
+    }
+    
+    button {
+      font-family: inherit;
+      font-size: inherit;
+      font-style: inherit;
+      font-weight: inherit
+    }
+    
+    a:active,
+    a:focus {
+      outline: 0
+    }
+    /* } */
+    
+    body,
+    input,
+    select,
+    textarea {
+      font: 18px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    
+    body {
+      background: #fff;
+    }
+    
+    h1 {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 1.75em;
+      font-weight: normal;
+      color: #000;
+    }
+    
+    #slotMachine {
+      background: #0000ff;
+      width: 540px;
+      margin: 10px auto 20px;
+      padding: 20px;
+      border-radius: 0px;
+    }
+    
+    #slotMachine,
+    .lever button {
+      background-color: rgba(0, 0, 0, 0.25);
+    }
+    
+    .group,
+    .slot,
+    .lever {
+        display: inline-block;
+    }
+    
+    .slot {
+      background: #fff;
+      text-align: center;
+      float: left;
+      padding: 0 10px;
+      width: 80px;
+      height: 100px;
+      overflow: hidden;
+      margin-right: 20px;
+    }
+    
+    .slot div {
+      position: relative;
+      top: -48px;
+    }
+    
+    .slot p {
+      font-weight: bold;
+      height: 60px;
+      margin-top: 10px;
+    }
+    
+    .slot p:nth-child(1) {
+      color: #ff00ff
+    }
+    
+    .slot p:nth-child(2) {
+      color: #00ffff
+    }
+    
+    .slot p:nth-child(3) {
+      color: #00ff00
+    }
+    
+    .slot p:nth-child(4) {
+      color: #ff0f0f
+    }
+    
+    .lever {
+      float: right;
+      padding-right: 20px;
+    }
+    
+    .lever button {
+      text-align: center;
+      border-radius: 0px;
+      line-height: 100px;
+      width: 100px;
+      border: none;
+      font-size: 1.8em;
+      background: rgb(252, 255, 244);
+    }
+    
+    .lever button:active {
+      color: #900;
+      margin: 2px 0 -2px;
+    }
+    
+    .message {
+      text-align: center;
+      color: #ff00ff;
+      font-size: 1.8em;
+      padding: 25px 0 5px;
+    }
+    
+    a {
+      color: #94A2F1;
+      margin-top: 15px;
+      text-align: center;
+      display: block;
+      text-decoration: none;
+    }
+    
+    a:hover {
+      color: #f00
+    }
