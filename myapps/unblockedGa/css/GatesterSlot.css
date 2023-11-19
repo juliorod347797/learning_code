@@ -67,8 +67,6 @@ footer h2 {
     height: 100vh;
     position: relative;
     text-align: center;
-
-    /* Add these styles to center the content */
     align-items: center;
     justify-content: center;
     margin-left: 195px;
@@ -146,6 +144,24 @@ button {
     bottom: 0;
     width: 100%;
     text-align: center;
+}
+
+.box {
+  /* Add vendor prefixes as needed */
+  animation: spin-animation linear infinite;
+}
+
+@keyframes spin-animation {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+.spinning {
+  animation-play-state: running;
 }
 
 
