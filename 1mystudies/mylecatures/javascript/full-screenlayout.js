@@ -37,3 +37,5 @@ function scrollToGameSlide(slideNumber) {
         targetSlide.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 }
+
+
