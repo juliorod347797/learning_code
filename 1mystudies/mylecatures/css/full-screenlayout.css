@@ -30,12 +30,13 @@ html {
 #game-container {
     height: 100vh;
     overflow: auto;
-    scroll-snap-type: y mandatory;
+    scroll-snap-type: y proximity;
 }
 
 .game-slide {
     scroll-snap-align: start;
 }
+
 
 #side-nav {
     position: fixed;
@@ -120,7 +121,7 @@ html {
 }
 
 .Greetings{
-    color: red;
+    
     font-size: 29px;
 }
 
@@ -191,4 +192,11 @@ html {
     color: #fff;
     text-align: center;
 }
+
+canvas {
+    background: #eee;
+    display: block;
+    margin: 0 auto;
+  }
+
 

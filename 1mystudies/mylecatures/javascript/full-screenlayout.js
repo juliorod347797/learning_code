@@ -34,8 +34,9 @@ function scrollToGameSlide(slideNumber) {
 
     if (targetSlide) {
         toggleNav(); 
-        targetSlide.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        targetSlide.scrollIntoView({ behavior: 'smooth', block: 'start', easing: 'ease-out' });
     }
 }
+
 
 
