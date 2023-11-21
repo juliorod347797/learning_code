@@ -10,7 +10,7 @@
     <button id="menu-button" onclick="toggleNav()">&#9776; Menu</button>
 
     <div id="side-nav">
-        <a href="#game-container1" onclick="scrollToGameSlide(1);">Game 1</a>
+        <a href="#game-container1" onclick="scrollToGameSlide(1);">Home</a>
         <a href="#game-container2" onclick="scrollToGameSlide(2);">Game 2</a>
         <a href="#game-container3" onclick="scrollToGameSlide(3);">Game 3</a>
         <a href="#game-container4" onclick="scrollToGameSlide(4);">Game 4</a>
@@ -20,9 +20,9 @@
     <div class="overlay" onclick="toggleNav()"></div>
 
     <div id="game-container">
-        <div id="game-container2" class="game-slide">
+        <div id="game-container1" class="game-slide">
             <div class="game-info">
-                <h2>Welcome To My Website</h2>
+                <h2>Welcome Traveler </h2>
                 
                 <p class="Greetings">
                     Greetings, I am Julius, an enthusiast of the coding craft. This website serves as a testament to the extent of my coding proficiency, crafted as a testing ground for the manifestation of my programming skills.
@@ -37,9 +37,8 @@
     <!-- <div id="game-container"> -->
         <div id="game-container2" class="game-slide">
             <div class="game-info">
-                <h2>Pac-Man</h2>
-                <img class="game-image" src="../images/2.gif" alt="Game GIF 1" />
-                <p>
+                <h2>!Snake!</h2>
+                <canvas id="stage" height="320" width="480"></canvas>
                     Description of the game. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.
                 </p>
                 <a href="#" class="play-button">Play Now</a>
@@ -53,8 +52,9 @@
                     <p>
                         Description of the game. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.
                     </p>
-                    <img class="game-image" src="../images/2.gif" alt="Game GIF 1" />
-                    <a href="#" class="play-button">Play Now</a>
+                    <canvas id="tetris" width="300" height="600"></canvas>
+
+                    <!-- <a href="#" class="play-button">Play Now</a> -->
                 </div>
             </div>
 
@@ -66,7 +66,9 @@
     </div>
 
     <script src="../javascript/full-screenlayout.js"></script>
-    <script src="../javascript/canvas.js"></script>
+    <script src="../javascript/mycanvas.js"></script>
+    <script src="../javascript/canvassnake.js"></script>
+    <script src="../javascript/Tetris.js"></script>
 
 </body>
 </html>

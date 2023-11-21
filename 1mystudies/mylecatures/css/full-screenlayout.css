@@ -102,13 +102,13 @@ html {
 }
 
 /* Alternate background images for odd/even slides */
-.game-slide:nth-child(odd) {
+/* .game-slide:nth-child(odd) {
     background-image: url("game_background_1.jpg");
 }
 
 .game-slide:nth-child(even) {
     background-image: url("game_background_2.jpg");
-}
+} */
 
 .game-info {
     width: 100%;
