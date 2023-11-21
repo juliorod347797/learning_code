@@ -48,7 +48,7 @@ html {
     transition: 0.5s;
     background-color: #111;
     padding-top: 60px;
-    z-index: 1;
+    z-index: 2;
 }
 
 #side-nav a {
@@ -99,6 +99,7 @@ html {
     background-position: center;
     position: relative;
     transition: height 0.5s ease-in-out;
+    
 }
 
 /* Alternate background images for odd/even slides */
@@ -110,6 +111,11 @@ html {
     background-image: url("game_background_2.jpg");
 } */
 
+.Greetings{
+    font-size: 29px;
+    width: 1000px;
+    text-align: center;
+}
 .game-info {
     width: 100%;
     margin: 0;
@@ -118,12 +124,12 @@ html {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-around; */
+    align-items: center;
 }
 
-.Greetings{
-    
-    font-size: 29px;
-}
 
 .game-info h2 {
     font-size: 3em;
@@ -197,6 +203,4 @@ canvas {
     background: #eee;
     display: block;
     margin: 0 auto;
-  }
-
-
+}
