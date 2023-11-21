@@ -11,3 +11,9 @@ function addListItems() {
 
 // Call the function to add <li> items when the page loads
 document.addEventListener("DOMContentLoaded", addListItems);
+const scrollToTop = () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+    });
+};

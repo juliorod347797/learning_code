@@ -1,25 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pac-Man</title>
-    <style>
-        body {
-            margin: 0;
-            overflow: hidden;
-        }
-
-        canvas {
-            display: block;
-            margin: 0 auto;
-            background-color: black;
-        }
-    </style>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/pac-man.css">
+        <title>Pac-Man</title>
+    </head>
 <body>
-    <canvas id="pacmanCanvas" width="800" height="600"></canvas>
-    <script src="../Javascript/pac-man.js"></script>
+<section class="game">
+  <div class="walls">
+    <div class="right-walls">
+      <div class="center-top-wall"></div>
+      <div class="center-bottom-wall"></div>
+    </div>
+    <div class="left-walls">
+      <div class="center-top-wall"></div>
+      <div class="center-bottom-wall"></div>
+    </div>
+
+    <div class="top-wall"></div>
+
+    <div class="central-walls">
+      <div class="complex-wall-one wall-1">
+        <div class="width"></div>
+        <div class="height"></div>
+      </div>
+
+      <div class="complex-wall-one wall-2">
+        <div class="width"></div>
+        <div class="height"></div>
+      </div>
+
+      <div class="complex-wall-one wall-3">
+        <div class="width"></div>
+        <div class="height"></div>
+      </div>
+
+      <div class="complex-wall-one wall-4">
+        <div class="width"></div>
+        <div class="height"></div>
+      </div>
+
+      <div class="complex-wall-one wall-5">
+        <div class="width"></div>
+        <div class="height"></div>
+      </div>
+
+      <div class="complex-wall-two wall-6">
+        <div class="width"></div>
+        <div class="height"></div>
+      </div>
+
+      <div class="complex-wall-two wall-7">
+        <div class="width"></div>
+        <div class="height"></div>
+      </div>
+
+      <div class="complex-wall-three wall-8">
+        <div class="width"></div>
+        <div class="height"></div>
+      </div>
+
+      <div class="complex-wall-three wall-9">
+        <div class="width"></div>
+        <div class="height"></div>
+      </div>
+
+      <div class="simple-wall-one wall-10"></div>
+      <div class="simple-wall-one wall-11"></div>
+      <div class="simple-wall-two wall-12"></div>
+      <div class="simple-wall-two wall-13"></div>
+      <div class="simple-wall-three wall-14"></div>
+      <div class="simple-wall-three wall-15"></div>
+      <div class="simple-wall-four wall-16"></div>
+      <div class="simple-wall-four wall-17"></div>
+      <div class="simple-wall-four wall-18"></div>
+      <div class="simple-wall-four wall-19"></div>
+
+      <div class="central-squar">
+        <div class="door">
+          <div class="white-door"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="gaps">
+    <div class="left-gap"></div>
+    <div class="right-gap"></div>
+  </div>
+  <div class="small-point"></div>
+  <div class="big-point"></div>
+
+  <div class="ghosts">
+    <div class="ghost" style="--ghost-color: #21a2b2;top: 113px;left: 113px;">
+      <div class="strucure">
+        <div class="head"></div>
+        <div class="eyes left"><span></span><span></span></div>
+        <div class="body"></div>
+        <div class="foot"></div>
+      </div>
+    </div>
+
+    <div class="ghost" style="--ghost-color: #ab12a5;top: 113px;left: 172px;">
+      <div class="strucure">
+        <div class="head"></div>
+        <div class="eyes right"><span></span><span></span></div>
+        <div class="body"></div>
+        <div class="foot"></div>
+      </div>
+    </div>
+
+    <div class="ghost" style="--ghost-color: #c1472a;top: 141px;left: 144px;">
+      <div class="strucure">
+        <div class="head"></div>
+        <div class="eyes up"><span></span><span></span></div>
+        <div class="body"></div>
+        <div class="foot"></div>
+      </div>
+    </div>
+
+    <div class="ghost" style="--ghost-color: #a948cd;top: 149px;left: 206px;">
+      <div class="strucure">
+        <div class="head"></div>
+        <div class="eyes down"><span></span><span></span></div>
+        <div class="body"></div>
+        <div class="foot"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pacman"></div>
+</section>
+<script src="../Javascript/pac-man.js"></script>
+
 </body>
 </html>
 
