@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background-color: black;
+      color: red;
+      font-family: monospace;
+      font-size: 15pt;
+      position: relative;
+      user-select: none;
+    }
+
+    .matrix-character {
+      position: absolute;
+      top: 0;
+      opacity: 0;
+      animation: fallAnimation linear infinite;
+    }
+
+    @keyframes fallAnimation {
+      0%, 100% {
+        transform: translateY(-100vh);
+        opacity: 0;
+      }
+      50% {
+        transform: translateY(100vh);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <script>
+const numCols = Math.floor(window.innerWidth / 20);
+  const maxElements = 100;
+  let intervalId;
+
+  function createRain() {
+    for (let i = 0; i < numCols; i++) {
+      const character = document.createElement('div');
+      character.className = 'matrix-character';
+      character.textContent = String.fromCharCode(65 + (i % 26));
+      character.style.left = `${i * 20}px`;
+      character.style.animationDuration = `${Math.random() * 4 + 2}s`;
+      character.style.animationDelay = `-${Math.random() * 2}s`;
+      document.body.appendChild(character);
+
+      setTimeout(() => {
+        character.style.opacity = '1';
+      }, 100);
+
+      setTimeout(() => {
+        character.style.opacity = '0';
+      }, 3000);
+
+      setTimeout(() => {
+        character.remove();
+      }, 6500);
+    }
+  }
+
+  createRain();
+
+  // Set the interval and stop it after 15 seconds
+  intervalId = setInterval(createRain, 3000);
+
+  setTimeout(() => {
+    clearInterval(intervalId);
+  }, 15000);
+  </script>
+</body>
+</html>
